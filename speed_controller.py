@@ -12,11 +12,6 @@ load_dotenv()
 # GIGACHAT_CREDENTIALS must be in .env
 credentials = os.environ.get("GIGACHAT_CREDENTIALS")
 
-if credentials:
-    print(f"DEBUG: Using GigaChat credentials: {credentials[:6]}...{credentials[-4:]}")
-else:
-    print("DEBUG: GIGACHAT_CREDENTIALS NOT FOUND in environment or .env")
-
 # verify_ssl_certs=False is often needed for GigaChat in certain environments
 client = GigaChat(credentials=credentials, verify_ssl_certs=False)
 
